@@ -1,0 +1,92 @@
+@import './variables.scss';
+
+button {
+  font-size: 1rem;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  display: block;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &.primary {
+    background-color: $main-btn;
+    color: $white-color;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $main-btn;
+      color: $main-btn;
+    }
+  }
+
+  &.primary-outline{
+    background-color: transparent;
+    border: 1px solid $main-btn;
+    color: $main-btn;
+    transition: $main-transition;
+
+
+    &:hover {
+      background-color: $main-btn;
+      color: $white-color;
+    }
+  }
+
+  &.dark {
+    background-color: $main-black;
+    color: $white-color;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $main-black;
+      color: $main-black;
+    }
+  }
+
+  &.dark-outline {
+    background-color: transparent;
+    border: 1px solid $main-black;
+    color: $main-black;
+    transition: $main-transition;
+
+
+    &:hover {
+      background-color: $main-black;
+      color: $white-color;
+    }
+  }
+
+  &.danger {
+    background-color: $main-danger;
+    border: 1px solid transparent;
+    color: $white-color;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $main-danger;
+      color: $main-danger;
+    }
+  }
+
+  &.danger-outline {
+    background-color: transparent;
+    border: 1px solid $main-danger;
+    color: $main-danger;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: $main-danger;
+      border: 1px solid transparent;
+      color: $white-color;
+    }
+  }
+
+  &:disabled{
+    cursor: no-drop;
+  }
+}

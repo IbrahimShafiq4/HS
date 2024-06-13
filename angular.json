@@ -30,9 +30,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/ngx-spinner/animations/ball-fussion.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "@angular/material/prebuilt-themes/purple-green.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -100,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "77d57ef4-602b-42fc-ac0d-ddf35772db0c"
   }
 }

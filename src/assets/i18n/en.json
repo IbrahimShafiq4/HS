@@ -1,0 +1,11 @@
+{
+  "STAYCATION": "Staycation",
+  "DROP_YOUR_IMAGE": "Drop Your Image",
+  "REQUIRED": "is required",
+  "VALID_EMAIL": "Please enter a valid email address",
+  "MIN_LENGTH": "{0} must be at least {1} characters long",
+  "MAX_LENGTH": "{0} cannot be more than {1} characters long",
+  "PATTERN": "{0} must include uppercase, lowercase, number, and special character",
+  "PASSWORDS_MUST_MATCH": "Passwords must match",
+  "HOMES_AS_UNIQUE_AS_YOU": "Homes as unique as you"
+}

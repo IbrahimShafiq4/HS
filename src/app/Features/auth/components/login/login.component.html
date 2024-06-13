@@ -1,0 +1,14 @@
+<app-shared-auth-layout
+  [componentTitle]="'Sign in'"
+  [componentText]="'If you don’t have an account register'"
+  [componentNavigation]="'/auth/register'"
+  [componentNavigationText]="'Register here !'"
+  [formFields]="loginLists"
+  [authForm]="loginForm"
+  [navigationToText]="'Forget Password ?'"
+  [navigationTo]="'/auth/forget-password'"
+  [btnText]="'Log In'"
+  [imageSrc]="'../../../../../assets/images/auth/signin.png'"
+  [imageTitle]="'Sign In To Roamhome'"
+  (formSubmission)="onLogin($event)"
+></app-shared-auth-layout>

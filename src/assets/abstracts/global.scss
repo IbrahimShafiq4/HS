@@ -1,0 +1,135 @@
+@import "./variables.scss";
+
+.bg-main-background {
+  background-color: $white-color;
+}
+
+.main-transition {
+  transition: $main-transition;
+}
+
+.main-box-shadow {
+  box-shadow: $main-box-shadow;
+}
+
+.main-color {
+  color: $main-btn;
+}
+
+.main-danger {
+  color: $main-danger;
+}
+
+.main-blue {
+  color: $main-blue;
+}
+
+.main-gray {
+  color: $main-gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.dark-red {
+  color: $dark-red;
+}
+
+.text-dark-blue {
+  color: $dark-blue;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.w-sm-100 {
+  width: 100%;
+}
+
+.w-sm-75 {
+  width: 75%;
+}
+
+.w-sm-50 {
+  width: 50%;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+@media (min-width: 576px) {
+  .w-sm-100 {
+    width: 100%;
+  }
+
+  .w-sm-75 {
+    width: 75%;
+  }
+
+  .w-sm-50 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .w-md-100 {
+    width: 100%;
+  }
+
+  .w-md-75 {
+    width: 75%;
+  }
+
+  .w-md-50 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .w-lg-100 {
+    width: 100%;
+  }
+
+  .w-lg-75 {
+    width: 75%;
+  }
+
+  .w-lg-50 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .w-xl-100 {
+    width: 100%;
+  }
+
+  .w-xl-75 {
+    width: 75%;
+  }
+
+  .w-xl-50 {
+    width: 50%;
+  }
+}
+
+
+* {
+  margin: 0;
+}
