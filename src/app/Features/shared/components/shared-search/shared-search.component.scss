@@ -1,0 +1,5 @@
+.input-group-div {
+    input:focus ~ label {
+        transform: translateY(100px)
+    }
+}
