@@ -10,6 +10,8 @@ import { SharedHeaderComponent } from './components/shared-header/shared-header.
 import { SharedAuthLayoutComponent } from './components/shared-auth-layout/shared-auth-layout.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { TranslateModule } from '@ngx-translate/core';
+import { SharedPaginationComponent } from './components/shared-pagination/shared-pagination.component';
+import { SharedSearchComponent } from './components/shared-search/shared-search.component';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedCardComponent,
     SharedHeaderComponent,
     SharedAuthLayoutComponent,
+    SharedPaginationComponent,
+    SharedSearchComponent,
   ],
   exports: [
     SharedTableComponent,
@@ -33,7 +37,9 @@ import { TranslateModule } from '@ngx-translate/core';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    SharedPaginationComponent,
+    SharedSearchComponent
   ],
 })
 export class SharedModule {}
