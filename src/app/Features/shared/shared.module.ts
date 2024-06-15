@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { SharedTableComponent } from './components/shared-table/shared-table.component';
@@ -12,6 +12,11 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedPaginationComponent } from './components/shared-pagination/shared-pagination.component';
 import { SharedSearchComponent } from './components/shared-search/shared-search.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { DynamicDatePipe } from './pipes/dynamic-date.pipe';
 
 @NgModule({
   imports: [
@@ -20,6 +25,11 @@ import { SharedSearchComponent } from './components/shared-search/shared-search.
     ReactiveFormsModule,
     RouterModule,
     NgxDropzoneModule,
+    FormsModule,
+    PaginatorModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
   ],
   declarations: [
     SharedTableComponent,
@@ -28,6 +38,7 @@ import { SharedSearchComponent } from './components/shared-search/shared-search.
     SharedAuthLayoutComponent,
     SharedPaginationComponent,
     SharedSearchComponent,
+    DynamicDatePipe
   ],
   exports: [
     SharedTableComponent,
@@ -39,7 +50,14 @@ import { SharedSearchComponent } from './components/shared-search/shared-search.
     RouterModule,
     TranslateModule,
     SharedPaginationComponent,
-    SharedSearchComponent
+    SharedSearchComponent,
+    FormsModule,
+    PaginatorModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    DynamicDatePipe
   ],
+  providers: []
 })
 export class SharedModule {}

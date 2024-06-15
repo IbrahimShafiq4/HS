@@ -4,3 +4,8 @@ export interface IFormFields {
   placeholder: string;
   type:string;
 }
+
+export interface SearchInput {
+  type: string;
+  placeholder: string;
+}

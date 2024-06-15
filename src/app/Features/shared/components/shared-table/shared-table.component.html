@@ -1,1 +1,14 @@
-<p>shared-table works!</p>
+<table
+    class="table table-striped table-bordered table-hover text-center main-box-shadow rounded-3 overflow-hidden"
+>
+    <thead>
+        <tr>
+            <th *ngFor="let header of tableHeaders">
+                {{ displayHeaders[header] }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+</table>

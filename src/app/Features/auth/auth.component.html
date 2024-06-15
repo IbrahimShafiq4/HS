@@ -1,2 +1,16 @@
-<router-outlet></router-outlet>
-<app-shared-search></app-shared-search>
+<!-- <router-outlet></router-outlet> -->
+<div class="my-5">
+    <app-shared-search
+        [searchInputs]="searchInputs"
+        [showSelectBox]="showSelectBox"
+        [selectBoxOptions]="selectBoxOptions"
+        (inputValues)="handleInputValues($event)"
+        (selectValue)="handleSelectValue($event)"
+    ></app-shared-search>
+</div>
+
+<div>
+    <app-shared-pagination [totalNumOfRecords]="20">
+
+    </app-shared-pagination>
+</div>

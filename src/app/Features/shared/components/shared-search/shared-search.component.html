@@ -1,10 +1,39 @@
-<p>shared-search works!</p>
-<div class="row">
-    <div class="col-md-6">
-        <!-- <input type="text" class="form-control"> -->
-        <div class="input-group-div">
-            <label for="">Hello</label>
-            <input type="text">
-        </div>
+<div class="container">
+    <div class="row">
+      <div
+        *ngIf="showSelectBox"
+        [ngClass]="{
+          'col-md-6': searchInputs.length <= 1,
+          'col-md-3': searchInputs.length >= 2
+        }"
+      >
+        <select
+          name="selectFilteration"
+          id="selectBox"
+          class="form-select"
+          (change)="selectBoxChange($event)"
+        >
+          <option value="" [defaultSelected]="true">Search By</option>
+          <option *ngFor="let option of selectBoxOptions" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+  
+      <div
+        *ngFor="let input of searchInputs; let i = index; let last = last"
+        #searchInput
+        [ngClass]="getColClass(i, last)"
+      >
+        <input
+          [type]="input.type"
+          [placeholder]="input.placeholder"
+          (keydown.enter)="inputChange(i, $event)"
+          class="form-control w-100"
+          [id]="input.placeholder"
+          [name]="input.placeholder"
+        />
+      </div>
     </div>
-</div>
+  </div>
+  
