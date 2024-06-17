@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IFormFields } from 'src/app/Features/shared/models/shared';
+import { AuthService } from '../../services/auth.service';
+import { HelperService } from 'src/app/Features/shared/services/helper.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-forget-password',
@@ -8,6 +11,10 @@ import { IFormFields } from 'src/app/Features/shared/models/shared';
   styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent {
+
+  private _AuthService = inject(AuthService);
+  private _HelperService = inject(HelperService);
+
   forgetForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
   });
@@ -23,7 +30,11 @@ export class ForgetPasswordComponent {
 
   onForgetPassword(forgetFormPassword: FormGroup) {
     if(forgetFormPassword.valid) {
-      console.log(forgetFormPassword.value.email);
+      this._AuthService.forgetPassword(forgetFormPassword.value).subscribe({
+        next: (res) => {  },
+        error: (error: HttpErrorResponse) => this._HelperService.error(error),
+        complete: () => this._HelperService.success('Checkout Your Mail')
+      })
     }
   }
 }

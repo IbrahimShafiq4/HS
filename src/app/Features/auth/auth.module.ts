@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [AuthService]
 })

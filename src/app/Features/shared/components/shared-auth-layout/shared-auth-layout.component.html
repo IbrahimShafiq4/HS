@@ -23,14 +23,17 @@
                   <i class="fa-solid fa-camera text-dark-blue font-20"></i>
                   <p class="mt-2 mb-0 font-14">Drop Your Image</p>
                 </ngx-dropzone-label>
-                <ngx-dropzone-preview multiple="false" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                <ngx-dropzone-preview multiple="false" *ngFor="let f of files" [removable]="true"
+                  (removed)="onRemove(f)">
                   <ngx-dropzone-label>{{ f.name }} ({{ f.type }} {{ f }})</ngx-dropzone-label>
                 </ngx-dropzone-preview>
               </ngx-dropzone>
             </div>
 
+            <!-- email -->
             <div class="p-2" *ngFor="let formField of formFields"
-              [ngClass]="{'col-md-6 col-12': (formField.controlName == 'phone' || formField.controlName == 'country' || (formName == 'register' && (formField.controlName == 'password' || formField.controlName == 'confirmPassword')) || formField.controlName == 'name' || formField.controlName == 'role'), 'col-12': (formField.controlName != 'phone' && formField.controlName != 'country')}">
+              [ngClass]="{'col-md-6 col-12':
+                (formField.controlName == 'phone' || formField.controlName == 'country' || (formName == 'register' && (formField.controlName == 'password' || formField.controlName == 'confirmPassword')) || formField.controlName == 'name' || formField.controlName == 'role'), 'col-12': (formField.controlName != 'phone' && formField.controlName != 'country')}">
               <div class="input-group d-flex flex-column gap-2">
                 <label [for]="formField.controlName" class="fs-6 text-dark-blue">
                   {{ formField.controlName === 'role' ? (userToken ? formField.label : 'Admin rights required') :
@@ -106,7 +109,7 @@
 
             <div class="p-2">
               <button [@slideInFormRight]="{value: '', params: {delay: 250 + 'ms'}}" class="primary d-block w-100 mt-3"
-              [disabled]="authForm.invalid">{{ btnText }}</button>
+                [disabled]="authForm.invalid">{{ btnText }}</button>
             </div>
           </form>
         </article>

@@ -9,6 +9,9 @@ button {
   display: block;
   border: 1px solid transparent;
   cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
 
   &.primary {
     background-color: $main-btn;

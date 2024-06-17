@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
 import { PaginatorState } from 'primeng/paginator';
 
 @Component({
@@ -8,18 +7,22 @@ import { PaginatorState } from 'primeng/paginator';
   styleUrls: ['./shared-pagination.component.scss'],
 })
 export class SharedPaginationComponent {
-  @Input() totalNumOfRecords: number = 0;
-  @Output() pageSizeChanged: EventEmitter<number> = new EventEmitter<number>();
-  @Output() pageIndexChanged: EventEmitter<number> = new EventEmitter<number>();
+  @Input() rowsPerPage: number[] = [];
+  @Input() totalRecords: number = 0;
+  @Output() pageSizeChanged: EventEmitter<number> = new EventEmitter<number>()
+  @Output() pageNumberChanged: EventEmitter<number> = new EventEmitter<number>()
+
   first: number = 0;
   rows: number = 10;
+  page: number = 0;
   size: number = 10;
-  page: number = 1;
 
   onPageChange(event: PaginatorState) {
     this.first = event.first ?? 0;
     this.rows = event.rows ?? 10;
-    this.page = Math.floor(this.first / this.rows) + 1;
+    this.page =  Math.floor( this.first / this.rows) + 1;
     this.size = this.rows;
+    this.pageSizeChanged.emit(this.size)
+    this.pageNumberChanged.emit(this.page)
   }
 }

@@ -35,5 +35,16 @@ export interface ICreateUser {
     verified: boolean;
     createdAt: string;
     updatedAt: string;
-  }
+  };
+}
+
+export interface IForgetPassword {
+  email: string;
+}
+
+export interface IResetPassword {
+  seed: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }

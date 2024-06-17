@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { DynamicDatePipe } from './pipes/dynamic-date.pipe';
+import { HelperService } from './services/helper.service';
 
 @NgModule({
   imports: [
@@ -58,6 +59,6 @@ import { DynamicDatePipe } from './pipes/dynamic-date.pipe';
     MatButtonModule,
     DynamicDatePipe
   ],
-  providers: []
+  providers: [HelperService]
 })
 export class SharedModule {}

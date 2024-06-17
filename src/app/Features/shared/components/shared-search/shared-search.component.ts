@@ -7,13 +7,12 @@ import { SearchInput } from '../../models/shared';
   styleUrls: ['./shared-search.component.scss'],
 })
 export class SharedSearchComponent {
-  @ViewChildren('searchInput') allInputs!: QueryList<ElementRef<HTMLInputElement>>;
-  
   @Input() searchInputs: SearchInput[] = [];
   @Input() showSelectBox: boolean = false;
   @Input() selectBoxOptions: string[] = [];
+  @Input() searchByVariable: string = '';
   @Output() inputValues: EventEmitter<string[]> = new EventEmitter<string[]>();
-  @Output() selectValue: EventEmitter<string> = new EventEmitter<string>();
+  @Output() selectValues: EventEmitter<string> = new EventEmitter<string>();
 
   inputData: string[] = [];
   selectData: string = '';
@@ -21,28 +20,30 @@ export class SharedSearchComponent {
   inputChange(index: number, event: Event) {
     const target = event.target as HTMLInputElement;
     this.inputData[index] = target.value;
-    this.inputValues.emit(this.inputData);
+    this.inputValues.emit(this.inputData)
   }
 
-  selectBoxChange(event: Event) {
+  selectChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.selectData = target.value;
-    this.selectValue.emit(this.selectData);
+    this.selectValues.emit(this.selectData);
   }
 
   getColClass(index: number, isLast: boolean): string {
     if (this.showSelectBox) {
-      if (this.searchInputs.length === 1 || index === 0) {
-        return 'col-md-6';
+      if (this.searchInputs.length == 1 || index == 0) {
+        return 'col-md-6'
       }
+
       if (this.searchInputs.length >= 2 && isLast) {
-        return 'col-md-3';
+        return 'col-md-3'
       }
     } else {
-      if (this.searchInputs.length === 1 || this.searchInputs.length === 2) {
-        return 'col-md-6';
+      if (this.searchInputs.length == 1 || this.searchInputs.length === 2) {
+        return 'col-md-6'
       }
     }
-    return '';
+
+    return ''
   }
 }

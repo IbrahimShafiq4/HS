@@ -1,39 +1,30 @@
 <div class="container">
-    <div class="row">
-      <div
-        *ngIf="showSelectBox"
-        [ngClass]="{
-          'col-md-6': searchInputs.length <= 1,
-          'col-md-3': searchInputs.length >= 2
-        }"
-      >
-        <select
-          name="selectFilteration"
-          id="selectBox"
+  <div class="row">
+    <div *ngIf="showSelectBox" [ngClass]="{
+        'col-md-6': searchInputs.length <= 1,
+        'col-md-3': searchInputs.length >= 2
+      }">
+      <select
           class="form-select"
-          (change)="selectBoxChange($event)"
-        >
-          <option value="" [defaultSelected]="true">Search By</option>
-          <option *ngFor="let option of selectBoxOptions" [value]="option">
-            {{ option }}
-          </option>
-        </select>
-      </div>
-  
-      <div
-        *ngFor="let input of searchInputs; let i = index; let last = last"
-        #searchInput
-        [ngClass]="getColClass(i, last)"
+          name="filtrationSelect"
+          id="filtrationSelect"
+          (change)="selectChange($event)"
       >
-        <input
+        <option value="" [defaultSelected]="true">{{ searchByVariable }}</option>
+        <option [value]="option" *ngFor="let option of selectBoxOptions">{{option}}</option>
+      </select>
+    </div>
+
+    <div *ngFor="let input of searchInputs; let i = index; let last = last"
+      [ngClass]="getColClass(i, last)"
+    >
+      <input
           [type]="input.type"
           [placeholder]="input.placeholder"
-          (keydown.enter)="inputChange(i, $event)"
-          class="form-control w-100"
           [id]="input.placeholder"
           [name]="input.placeholder"
-        />
-      </div>
+          (keydown.enter)="inputChange(i, $event)"
+          class="form-control w-100">
     </div>
   </div>
-  
+</div>

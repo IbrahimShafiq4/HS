@@ -62,14 +62,4 @@ export class SharedAuthLayoutComponent {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
-
-  @HostListener('window:resize') resizeWindow() {
-    if (window.innerWidth <= 991) {
-      this.imageVisibility = false;
-      console.log(`window is Smaller ${window.innerWidth}`);
-    } else {
-      this.imageVisibility = true;
-      console.log(`window is Greater ${window.innerWidth}`);
-    }
-  }
 }

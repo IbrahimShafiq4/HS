@@ -1,23 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SearchInput } from '../shared/models/shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
-  searchInputs: SearchInput[] = [
+  inputsData: SearchInput[] = [
     { type: 'text', placeholder: 'First Input' },
+    { type: 'text', placeholder: 'Second Input' },
   ];
-  selectBoxOptions: string[] = ['Option 1', 'Option 2', 'Option 3'];
-  showSelectBox: boolean = true;
 
-  handleInputValues(values: string[]) {
-    console.log('Input Values:', values);
+  selectOptions: string[] = ['First Option', 'Second Option'];
+
+  handleInputValues(data: string[]) {
+    const firstInputData = data.filter((_, index) => index !== 1);
+    if (firstInputData.length > 0) {
+      console.log(firstInputData);
+    }
   }
 
-  handleSelectValue(value: string) {
-    console.log('Selected Value:', value);
+  handleSelectValues(data: string) {
+    console.log(`SelectValues '${data}'`);
   }
 }

@@ -1,9 +1,13 @@
-<article>
-    <div class="d-flex justify-content-between align-items-center">
-        <div>
-            <h3> {{ mainHeader }} </h3>
-            <p> {{ mainHeaderText }} </p>
-        </div>
-        <button *ngIf="btnVisibility"> {{ btnText }} </button>
+<article class="
+      bg-white main-box-shadow
+      container mx-auto p-3 my-3 rounded-2">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="content">
+      <h3 class="h1 m-0">{{ mainHeader }}</h3>
+      <p class="m-0">{{ mainHeaderText }}</p>
     </div>
+    <button
+      class="primary" type="button"
+      *ngIf="btnVisibility" (click)="btnSubmission('/auth/register/1')">{{ btnText }}</button>
+  </div>
 </article>

@@ -1,9 +1,9 @@
 <div class="card-paginator mx-auto d-flex justify-content-center my-4">
   <p-paginator
     (onPageChange)="onPageChange($event)"
-    [first]="page"
-    [rows]="size"
-    [totalRecords]="totalNumOfRecords"
-    [rowsPerPageOptions]="[10, 20, 30]"
-  ></p-paginator>
+    [first]="first" [rows]="rows"
+    [totalRecords]="120"
+    [rowsPerPageOptions]="rowsPerPage">
+  </p-paginator>
+
 </div>
