@@ -7,6 +7,7 @@ import {
   ILoginResponse,
   IResetPassword,
   IResponse,
+  IUser,
 } from '../models/auth';
 import { Observable } from 'rxjs';
 
@@ -42,5 +43,9 @@ export class AuthService {
     const sp = new SpeechSynthesisUtterance(message);
     [sp.voice] = speechSynthesis.getVoices();
     speechSynthesis.speak(sp);
+  }
+
+  getSingleUserData(userId: string): Observable<IResponse<IUser>> {
+    return this._HttpClient.get<IResponse<IUser>>(`admin/users/${userId}`)
   }
 }

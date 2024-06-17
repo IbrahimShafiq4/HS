@@ -4,7 +4,7 @@ export interface IResponse<T> {
   data: T;
 }
 
-export type IResponseData = ILoginResponse | ICreateUser;
+export type IResponseData = ILoginResponse | ICreateUser | IUser;
 
 export interface ILoginData {
   email: string;
@@ -47,4 +47,17 @@ export interface IResetPassword {
   email: string;
   password: string;
   confirmPassword: string;
+}
+
+export interface IUser {
+  id: string;
+  userName: string;
+  email: string;
+  phoneNumber: number;
+  country: string;
+  role: string;
+  profileImage: string;
+  verified: boolean;
+  createdAt: string;
+  updatedAt: string;
 }

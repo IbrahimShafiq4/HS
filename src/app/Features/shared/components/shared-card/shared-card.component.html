@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <div class="wrapper-cell">
     <div class="image"></div>
     <div class="text">
@@ -56,6 +56,49 @@
       <div class="text-line"></div>
       <div class="text-line"></div>
       <div class="text-line"></div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card-img bg-white main-box-shadow p-2 rounded-3">
+        <article>
+          <figure class="main-img mb-2">
+            <img
+              #mainImage
+              src="../../../../../assets/images/auth/reset.png"
+              class="w-100 object-fit-cover"
+              alt="Main Image"
+            />
+          </figure>
+          <div class="row secondary-img g-2">
+            <div class="col-md-3" *ngFor="let imgSrc of smallImageSrcs">
+              <figure>
+                <img
+                  #smallImg
+                  [src]="imgSrc"
+                  class="w-100 object-fit-cover"
+                  alt="Small Image"
+                />
+              </figure>
+            </div>
+          </div>
+        </article>
+        <div class="card-content px-2 py-1">
+          <h3>Title</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores,
+            laudantium?
+          </p>
+          <div class="d-flex justify-content-between">
+            <button class="primary px-2 py-1">Button</button>
+            <button class="danger px-2 py-1">Button</button>
+          </div>
+          <p></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

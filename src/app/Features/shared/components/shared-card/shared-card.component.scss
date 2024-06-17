@@ -1,3 +1,6 @@
+@import '../../../../../assets/layout.scss';
+
+
 .wrapper {
   margin: 30px;
   padding: 30px;
@@ -50,4 +53,23 @@
   width: 230px;
   margin: 4px 0;
   @extend .animated-background;
+}
+
+.main-img {
+  img {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.secondary-img {
+  img {
+    transition: 0.3s linear;
+    aspect-ratio: 2 / 1;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }
